@@ -1,0 +1,33 @@
+@import "~bootstrap/scss/bootstrap";
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+:root {
+  --color-primary: #ffffff;
+  --color-secundary: #0796d3;
+  --color-terciary: #53c0f0;
+
+  --font-primary: "Inter", sans-serif;
+  --font-color-primary: #000000;
+  --font-color-secundary: #0000008a;
+}
+
+html {
+  @media (max-width: 62.5rem) {
+    font-size: 93.75%;
+  }
+
+  @media (max-width: 45rem) {
+    font-size: 87.5%;
+  }
+}
+
+body {
+  background-color: var(--background-primary);
+  font-family: var(--font-primary);
+  --webkit-font-smoothing: antialisse;
+}

@@ -1,95 +1,127 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
 
-export default function Home() {
+import { useEffect, useState } from "react";
+import styles from "./home.module.scss";
+import {
+  Button,
+  Header,
+  AddModal,
+  TodoCard,
+  DeleteModal,
+} from "./shared/components";
+import { ITodo } from "./shared/domain-types";
+
+const Home: React.FC = () => {
+  const [todos, setTodos] = useState<ITodo[]>([]);
+  const [showEditModal, setShowEditModal] = useState<boolean>(false);
+  const [showDeleteModal, setShowDeleteModal] = useState<boolean>(false);
+  const [todoToDelete, setTodoToDelete] = useState<ITodo | null>(null);
+
+  const onAddTodos = (todo: ITodo) => {
+    setTodos((prevTodos) => {
+      const updatedTodos = [...prevTodos, todo];
+
+      localStorage.setItem("todos", JSON.stringify(updatedTodos));
+      return updatedTodos;
+    });
+
+    setShowEditModal(false);
+  };
+
+  useEffect(() => {
+    const storedTodos = localStorage.getItem("todos");
+    if (storedTodos) {
+      setTodos(JSON.parse(storedTodos));
+    }
+  }, []);
+
+  const onOpenEditModal = () => {
+    setShowEditModal(true);
+  };
+
+  const onCloseEditModal = () => {
+    setShowEditModal(false);
+  };
+
+  const onOpenDeleteModal = (todo: ITodo) => {
+    setShowDeleteModal(true);
+
+    setTodoToDelete(todo);
+  };
+
+  const onCloseDeleteModal = () => {
+    setShowDeleteModal(false);
+  };
+
+  const onToggleConcluded = (id: number) => {
+    setTodos((prevTodos) => {
+      const updatedTodos = prevTodos.map((todo) =>
+        todo.id === id ? { ...todo, isConcluded: !todo.isConcluded } : todo
+      );
+
+      localStorage.setItem("todos", JSON.stringify(updatedTodos));
+
+      return updatedTodos;
+    });
+  };
+
+  const onDeleteTodo = (todo: ITodo) => {
+    setTodos((prevTodos) => {
+      const updatedTodos = prevTodos.filter((t) => t.id !== todo.id);
+
+      localStorage.setItem("todos", JSON.stringify(updatedTodos));
+
+      return updatedTodos;
+    });
+
+    onCloseDeleteModal();
+  };
+
   return (
-    <div className={styles.page}>
+    <>
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+        <Header />
+        <section>
+          <div className={styles.todoContainerP}>
+            <div className={styles.todoContainerF}>
+              {todos.length > 0 ? (
+                todos.map((todo) => {
+                  return (
+                    <TodoCard
+                      id={todo.id}
+                      isConcluded={todo.isConcluded}
+                      text={todo.text}
+                      key={todo.id}
+                      openDeleteModal={() => onOpenDeleteModal(todo)}
+                      onToggleConcluded={onToggleConcluded}
+                    />
+                  );
+                })
+              ) : (
+                <div className={styles.containerMessage}>
+                  <span>SEM TAREFAS NO MOMENTO</span>
+                </div>
+              )}
+            </div>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+            <Button onClick={onOpenEditModal}>Adicionar Nova Tarefa</Button>
+          </div>
+        </section>
+        <AddModal
+          handleClose={onCloseEditModal}
+          show={showEditModal}
+          addTodo={onAddTodos}
+        />
+
+        <DeleteModal
+          handleClose={onCloseDeleteModal}
+          show={showDeleteModal}
+          todo={todoToDelete}
+          onDeleteTodo={onDeleteTodo}
+        />
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </>
   );
-}
+};
+
+export default Home;
