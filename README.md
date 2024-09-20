@@ -8,14 +8,14 @@
 <hr>
 
 <div>
- <h1>Página comercial de café</h1>
+ <h1>Teste Técnico Legaplan</h1>
  
-Bem-vindo ao projeto da Loja de Café! Este é um projeto em HTML e CSS que simula uma página web para uma loja de café fictícia. A página contém informações sobre os produtos, promoções e outras seções relevantes para uma loja de café.
+Bem Vindo!, este é um teste técnico proposto pela Legaplan, trata se de um todo list simples, onde os dados são persistidos localmente.
  
  <h2>Tecnologias Utilizadas:</h2>
  
  <div>
-    <img src=https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white>
+    <img src=![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)>
  </div>
   <div>
     <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
