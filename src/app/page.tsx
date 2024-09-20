@@ -87,9 +87,9 @@ const Home: React.FC = () => {
         <section>
           <div className={styles.todoContainerP}>
             <div className={styles.todoContainerF}>
-              <span>Suas tarefas de hoje</span>
               {todos.length > 0 ? (
                 <>
+                <span>Suas tarefas de hoje</span>
                   {notConcludedTodos.map((todo) => (
                     <TodoCard
                       id={todo.id}
