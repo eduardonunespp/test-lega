@@ -33,13 +33,20 @@ const ModalDelete: React.FC<Props> = ({
     };
   }, []);
 
+  const truncateText = (text: any, maxLength: any) => {
+    if (text && text.length > maxLength) {
+      return text.substring(0, maxLength) + '...';
+    }
+    return text || '';
+  };
+
   return (
     <Modal show={show} onHide={handleClose} centered>
       <Modal.Header>
-        <h5>Deseja realmente deletar a tarefa?</h5>
+        <h5>Deseja realmente deletar a tarefa</h5>
       </Modal.Header>
       <Modal.Body>
-        <span>Tem certeza que você deseja deletar essa tarefa?</span>
+      <p>Tem certeza que você deseja deletar a tarefa de título: <span>{truncateText(todo?.text, 25)}</span></p>
 
         <div
           className="buttons-container"

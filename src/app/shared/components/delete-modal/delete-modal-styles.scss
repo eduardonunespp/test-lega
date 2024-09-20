@@ -51,8 +51,13 @@
 .modal-body {
   padding: 0rem 0.9375rem;
 
+  p {
+    font-size: 0.95rem;
+  }
+
   span {
-    margin-bottom: 0.625rem;
+    color: var(--color-secundary);
+    font-weight: 500;
   }
 }
 
