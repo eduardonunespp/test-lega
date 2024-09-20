@@ -77,6 +77,9 @@ const Home: React.FC = () => {
     onCloseDeleteModal();
   };
 
+  const concludedTodos = todos.filter((todo) => todo.isConcluded);
+  const notConcludedTodos = todos.filter((todo) => !todo.isConcluded);
+
   return (
     <>
       <main className={styles.main}>
@@ -84,9 +87,10 @@ const Home: React.FC = () => {
         <section>
           <div className={styles.todoContainerP}>
             <div className={styles.todoContainerF}>
+              <span>Suas tarefas de hoje</span>
               {todos.length > 0 ? (
-                todos.map((todo) => {
-                  return (
+                <>
+                  {notConcludedTodos.map((todo) => (
                     <TodoCard
                       id={todo.id}
                       isConcluded={todo.isConcluded}
@@ -95,8 +99,19 @@ const Home: React.FC = () => {
                       openDeleteModal={() => onOpenDeleteModal(todo)}
                       onToggleConcluded={onToggleConcluded}
                     />
-                  );
-                })
+                  ))}
+                  <span>Tarefas finalizadas</span>
+                  {concludedTodos.map((todo) => (
+                    <TodoCard
+                      id={todo.id}
+                      isConcluded={todo.isConcluded}
+                      text={todo.text}
+                      key={todo.id}
+                      openDeleteModal={() => onOpenDeleteModal(todo)}
+                      onToggleConcluded={onToggleConcluded}
+                    />
+                  ))}
+                </>
               ) : (
                 <div className={styles.containerMessage}>
                   <span>SEM TAREFAS NO MOMENTO</span>

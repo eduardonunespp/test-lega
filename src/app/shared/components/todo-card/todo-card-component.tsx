@@ -18,7 +18,7 @@ const TodoCard: React.FC<Props> = ({
   openDeleteModal,
   onToggleConcluded,
   id,
-}) => {
+}) => {        
   return (
     <div className='card-custom'>
       <div className='custom'>
