@@ -18,31 +18,27 @@ Bem Vindo!, este é um teste técnico proposto pela Legaplan, trata se de um tod
     <img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white">
  </div>
   <div>
-    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+    <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB">
  </div>
-  <div>
-   <img style="block" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
- </div>
+
  
  <h2>Funcionalidades</h2>
   
-  - Exibe uma página inicial com uma visão geral da loja de café, incluindo informações sobre a empresa e seus valores
-  - Apresenta os produtos disponíveis para venda, com imagens, descrições e preços
+  - Adicona uma tarefa
+  - Marcação de tarefa como concluída
+  - Deleção de tarefa
  
  <h2>Como usar</h2>
  
   - Clone este repositório para sua máquina local ou faça o download do código-fonte
-  - Abra o arquivo index.html em um navegador web de sua preferência
- 
+  - instale as dependências e rode o projeto com npm ou yarn run dev
 </div>
 
 <hr>
 
-Este projeto foi desenvolvido como um exemplo fictício de uma loja de café usando HTML e CSS.
-As imagens utilizadas neste projeto são apenas ilustrativas. Certifique-se de ter as permissões necessárias ao utilizar imagens reais em seu projeto.
+O Objetivo deste projeto foi realizar o teste técnico proposto pela Legaplan.
 
-O projeto está disponível em: <strong><a href="https://eduardonunespp.github.io/Project-coffe/">coffe-page</a></strong> 🚀
-
+O projeto está disponível em: <strong><a href="https://test-legaplanssh01.vercel.app">coffe-page</a></strong> 🚀
 
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
