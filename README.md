@@ -1,3 +1,46 @@
+
+<h1></h1>
+ 
+![image](https://github.com/user-attachments/assets/f6017c94-53a4-45a6-bd79-efd9186efc89)
+
+<h1></h1>
+
+<hr>
+
+<div>
+ <h1>Teste Técnico Legaplan</h1>
+ 
+Bem Vindo!, este é um teste técnico proposto pela Legaplan, trata se de um todo list simples, onde os dados são persistidos localmente.
+ 
+ <h2>Tecnologias Utilizadas:</h2>
+ 
+ <div>
+    <img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white">
+ </div>
+  <div>
+    <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB">
+ </div>
+
+ 
+ <h2>Funcionalidades</h2>
+  
+  - Adicona uma tarefa
+  - Marcação de tarefa como concluída
+  - Deleção de tarefa
+ 
+ <h2>Como usar</h2>
+ 
+  - Clone este repositório para sua máquina local ou faça o download do código-fonte
+  - instale as dependências e rode o projeto com npm ou yarn run dev
+</div>
+
+<hr>
+
+O Objetivo deste projeto foi realizar o teste técnico proposto pela Legaplan.
+
+O projeto está disponível em: <strong><a href="https://test-legaplanssh01.vercel.app">todo-list-legan</a></strong> 🚀
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
