@@ -38,7 +38,7 @@ Bem Vindo!, este é um teste técnico proposto pela Legaplan, trata se de um tod
 
 O Objetivo deste projeto foi realizar o teste técnico proposto pela Legaplan.
 
-O projeto está disponível em: <strong><a href="https://test-legaplanssh01.vercel.app">coffe-page</a></strong> 🚀
+O projeto está disponível em: <strong><a href="https://test-legaplanssh01.vercel.app">todo-list-legan</a></strong> 🚀
 
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
