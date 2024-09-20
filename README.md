@@ -15,7 +15,7 @@ Bem Vindo!, este é um teste técnico proposto pela Legaplan, trata se de um tod
  <h2>Tecnologias Utilizadas:</h2>
  
  <div>
-    <img src=![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)>
+    <img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white">
  </div>
   <div>
     <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
